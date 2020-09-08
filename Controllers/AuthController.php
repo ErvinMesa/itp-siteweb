@@ -18,6 +18,16 @@ class AuthController extends Controller{
         require_once $this->viewPath."login.php";
     }
     public function log_post(){
+        $data = $this->assocMaker($this->col);
+        $cred = $this->model->get($data['email'],"email");
+        if($cred != "error" && password_verify($data['password'],$cred['password'])){
+            session_start();
+            $_SESSION['user'] = $cred['id'];
+            echo $_SESSION['user'];
+        }
+        else{
+            echo "error";
+        }
     }
 
     public function reg_show(){

@@ -25,9 +25,9 @@ class BarangayModel{
         $stmt->execute([$data]);
     }
 
-    function get($id){
-        $stmt = $this->db->prepare("SELECT * FROM $this->table WHERE id = ?");
-        $stmt->execute([$id]);
+    function get($key,$col="id"){
+        $stmt = $this->db->prepare("SELECT * FROM $this->table WHERE $col = ?");
+        $stmt->execute([$key]);
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $result = $stmt->fetchAll()[0];
         return $result;
