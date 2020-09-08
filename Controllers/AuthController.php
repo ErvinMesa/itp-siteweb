@@ -23,7 +23,7 @@ class AuthController extends Controller{
         if($cred != "error" && password_verify($data['password'],$cred['password'])){
             session_start();
             $_SESSION['user'] = $cred['id'];
-            echo $_SESSION['user'];
+            echo $_SESSION['user']; 
         }
         else{
             echo "error";
