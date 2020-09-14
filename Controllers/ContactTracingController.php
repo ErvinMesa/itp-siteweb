@@ -1,7 +1,7 @@
 <?php
 
 require_once './models/Tables/cTracingModel.php';
-
+require_once './includes/classes/Middleware.php';
 class ContactTracingController extends Controller{
     private $viewPath = __DIR__."/../views/content_pages/contact_tracing/";
     private $db;
@@ -12,6 +12,7 @@ class ContactTracingController extends Controller{
     {
         $this->db = $db;
         $this->model = new cTracingModel($this->db);
+        new Middleware();
     }
 
     public function show()

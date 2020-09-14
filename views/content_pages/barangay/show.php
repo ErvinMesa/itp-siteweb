@@ -17,7 +17,7 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Level</th>
+                                    <th>Location</th>
                                     <th>Latitude</th>
                                     <th>Longitude</th>
                                     <th>Est. Population</th>
@@ -28,7 +28,7 @@
                                 <?php foreach($entries as $entry): ?>
                                     <tr>
                                         <td><?= $entry['bname']?></td>
-                                        <td><?= $entry['blevel']?></td>
+                                        <td><?= $citymuns[$entry['idcm']]?></td>
                                         <td><?= $entry['latitude']?></td>
                                         <td><?= $entry['longitude']?></td>
                                         <td><?= $entry['estpop']?></td>

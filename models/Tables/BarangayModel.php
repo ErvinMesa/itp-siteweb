@@ -11,7 +11,7 @@ class BarangayModel{
     
     function put($data)
     {
-        $stmt = $this->db->prepare("INSERT INTO $this->table (bname,latitude,longitude,blevel,estpop,remarks) VALUES (?,?,?,?,?,?)");
+        $stmt = $this->db->prepare("INSERT INTO $this->table (bname,latitude,longitude,idcm,estpop,remarks) VALUES (?,?,?,?,?,?)");
         $stmt->execute($data);
     }
 

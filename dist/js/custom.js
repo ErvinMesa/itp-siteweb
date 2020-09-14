@@ -146,6 +146,17 @@ $(function () {
 
     $('#ctracing').DataTable();
 
+    var mymap = L.map('mapid').setView([10.6342877,122.9324966], 13);
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoicmF5dmVuam0iLCJhIjoiY2tmMjNvbnFoMWVzMTJ2cDN2eHpmZzNjZSJ9.C1e6ZYTvg-xVUFRkoDrLCw'
+    }).addTo(mymap);
+    
     $("#Form").on("click",function(e){ 
         e.preventDefault();
         var form = $(this).parents('form');

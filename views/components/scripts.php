@@ -34,3 +34,4 @@
 
 <script src=<?=asset("./src/assets/libs/sweetalert2/dist/sweetalert2.all.min.js")?>></script>
 <script src=<?=asset("./src/assets/extra-libs/sweetalert2/sweet-alert.init.js")?>></script>
+<script src=<?=asset("./src/assets/libs/leaflet/leaflet.js")?>></script>

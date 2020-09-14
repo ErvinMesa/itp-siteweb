@@ -37,9 +37,10 @@
                             <div class="col-3">
                                 <h4 class="card-title">Level</h4>
                                 <div class="form-group mb-4">
-                                    <select class="form-control" id="exampleFormControlSelect1" name="blevel">
-                                        <option value="1">Level 1</option>
-                                        <option value="2">Level 2</option>
+                                    <select class="form-control" id="exampleFormControlSelect1" name="idcm">
+                                        <?php foreach($citymuns as $cm): ?>
+                                            <option value=<?=$cm['id']?>><?= $cm['cmdesc']?></option>
+                                        <?php endforeach ?>
                                     </select>
                                 </div>
                             </div>

@@ -13,6 +13,7 @@
     <link href=<?= asset("./src/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css")?> rel="stylesheet">
     <link href=<?= asset("./src/assets/libs/c3/c3.min.css")?> rel="stylesheet">
     <link href=<?= asset("./src/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css")?> rel="stylesheet">
+    <link href=<?= asset("./src/assets/libs/leaflet/leaflet.css")?> rel="stylesheet">
     <!-- Custom CSS -->
     <link href=<?= asset("./dist/css/style.min.css")?> rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

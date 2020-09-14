@@ -4,7 +4,7 @@ return [
     //Login&Register
     ['GET','/login',['AuthController','log_show']],
     ['POST','/login',['AuthController','log_post']],
-    ['GET','/logout',['AuthController','logout']],
+    ['POST','/logout',['AuthController','logout']],
     ['GET','/register',['AuthController','reg_show']],
     ['POST','/register',['AuthController','reg_post']],
     //Profile
@@ -23,7 +23,5 @@ return [
     ['GET','/barangay/{id}',['BarangayController','edit']],
     ['POST','/barangay/{id}',['BarangayController','save']],
     ['POST','/barangay',['BarangayController','post']],
-    //Map
-    ['GET','/map',['MapController','show']],
 ];
 ?>

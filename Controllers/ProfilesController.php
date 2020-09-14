@@ -1,7 +1,12 @@
 <?php
-
+require_once './includes/classes/Middleware.php';
 class ProfilesController extends Controller{
     private $viewPath = __DIR__."/../views/content_pages/profile/";
+
+    function __construct()
+    {
+        new Middleware();
+    }
 
     public function show()
     {

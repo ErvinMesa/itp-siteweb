@@ -21,13 +21,18 @@ class AuthController extends Controller{
         $data = $this->assocMaker($this->col);
         $cred = $this->model->get($data['email'],"email");
         if($cred != "error" && password_verify($data['password'],$cred['password'])){
-            session_start();
             $_SESSION['user'] = $cred['id'];
-            echo $_SESSION['user']; 
+            $_SESSION['login_status'] = true;
+            $this->redirect("/");
         }
         else{
             echo "error";
         }
+    }
+
+    public function logout(){
+        session_unset();
+        $this->redirect("/");
     }
 
     public function reg_show(){
