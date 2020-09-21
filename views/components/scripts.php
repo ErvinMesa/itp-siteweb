@@ -16,9 +16,6 @@
 <script src=<?= asset("./dist/js/waves.js")?>></script>
 <!--Menu sidebar -->
 <script src=<?= asset("./dist/js/sidebarmenu.js")?>></script>
-<!--Custom JavaScript -->
-<script src=<?= asset("./dist/js/custom.js")?>></script>
-<!--This page JavaScript -->
 <!-- chartist chart -->
 <script src=<?= asset("./src/assets/libs/chartist/dist/chartist.min.js")?>></script>
 <script src=<?= asset("./src/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js")?>></script>
@@ -35,3 +32,5 @@
 <script src=<?=asset("./src/assets/libs/sweetalert2/dist/sweetalert2.all.min.js")?>></script>
 <script src=<?=asset("./src/assets/extra-libs/sweetalert2/sweet-alert.init.js")?>></script>
 <script src=<?=asset("./src/assets/libs/leaflet/leaflet.js")?>></script>
+<!--Custom JavaScript -->
+<script src=<?= asset("./dist/js/custom.js")?>></script>

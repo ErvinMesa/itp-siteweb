@@ -20,6 +20,12 @@ class Controller{
     public function redirect($path){
         header("Location:http://localhost:8000$path");
     }
+
+    public function alert($title,$text){
+        $title = $title;
+        $text = $text;
+        require './includes/functions/Alert.php';
+    }
 }
 
 ?>

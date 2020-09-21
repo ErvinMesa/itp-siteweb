@@ -30,7 +30,7 @@ class UsersModel{
         $stmt->execute([$key]);
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         if($stmt->rowCount() > 0){
-            $result = $stmt->fetchAll()[0];
+            $result = $stmt->fetch();
             return $result;
         }
         else{

@@ -14,9 +14,17 @@ class AuthController extends Controller{
         $this->model = new UsersModel($this->db);
     }
 
-    public function log_show(){
+    public function log_show($data){
         require_once $this->viewPath."login.php";
+        if(sizeof($data) > 0){
+            switch($data['error']){
+                case "100":
+                    $this->alert("Invalid Login","");
+                break;
+            }
+        }
     }
+    
     public function log_post(){
         $data = $this->assocMaker($this->col);
         $cred = $this->model->get($data['email'],"email");
@@ -26,7 +34,7 @@ class AuthController extends Controller{
             $this->redirect("/");
         }
         else{
-            echo "error";
+            $this->redirect("/login/100");
         }
     }
 
@@ -35,15 +43,27 @@ class AuthController extends Controller{
         $this->redirect("/");
     }
 
-    public function reg_show(){
+    public function reg_show($data){
         require_once $this->viewPath."register.php";
+        if(sizeof($data) > 0){
+            switch($data['error']){
+                case "100":
+                    $this->alert("Email Taken","");
+                break;
+            }
+        }
     }
 
     public function reg_post(){
         $data = $this->arrayMaker($this->col);
         $data[2] = password_hash($data[2],PASSWORD_BCRYPT);
-        $this->model->put($data);
-        $this->redirect("/");
+        if($this->model->get($data[1],"email") == "error"){
+            $this->model->put($data);
+            $this->redirect("/");
+        }
+        else{
+            $this->redirect("/register/100");
+        }
     }
 }
 

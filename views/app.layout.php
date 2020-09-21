@@ -3,9 +3,8 @@
 session_start();
 ob_start();
 require_once __DIR__.'/../includes/classes/Router.php'; 
-require_once __DIR__.'/components/head.php';
 
-$routeInfo = $dispatcher->dispatch($httpMethod, $uri);
+$routeInfo = $router->dispatch();
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
         require_once __DIR__.'/error/404.php';
@@ -21,16 +20,21 @@ switch ($routeInfo[0]) {
         $class = new $className($db->getConn());
         break;
     }
+if($router->httpMethod!="POST"){
+    require_once __DIR__.'/components/head.php';
+}
 ?>
     <div class="page-wrapper">
         <?php 
-        if(isset($class)){
-            call_user_func_array([$class,$method],[$vars]); 
-        }
+            if(isset($class)){
+                call_user_func_array([$class,$method],[$vars]); 
+            }
         ?>
     </div>
     <?php 
-        require_once __DIR__.'/components/scripts.php';
+        if($router->httpMethod!="POST"){
+            require_once __DIR__.'/components/scripts.php';
+        }
         ob_end_flush();
     ?>
 </body>

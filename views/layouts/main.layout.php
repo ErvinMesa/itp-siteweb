@@ -57,8 +57,8 @@
                                         <div class="dw-user-box p-3 d-flex">
                                             <div class="u-img"><img src=<?= asset("./src/assets/images/users/1.jpg")?> alt="user" class="rounded" width="80"></div>
                                             <div class="u-text ml-2">
-                                                <h4 class="mb-0">Steave Jobs</h4>
-                                                <p class="text-muted mb-1 font-14">varun@gmail.com</p>
+                                                <h4 class="mb-0">Name</h4>
+                                                <p class="text-muted mb-1 font-14">email</p>
                                             </div>
                                         </div>
                                     </li>

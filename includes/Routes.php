@@ -2,10 +2,10 @@
 return [
     ['GET','/',['HomeController','show']],
     //Login&Register
-    ['GET','/login',['AuthController','log_show']],
+    ['GET','/login[/{error}]',['AuthController','log_show']],
     ['POST','/login',['AuthController','log_post']],
     ['GET','/logout',['AuthController','logout']],
-    ['GET','/register',['AuthController','reg_show']],
+    ['GET','/register[/{error}]',['AuthController','reg_show']],
     ['POST','/register',['AuthController','reg_post']],
     //Profile
     ['GET','/profile',['ProfilesController','show']],

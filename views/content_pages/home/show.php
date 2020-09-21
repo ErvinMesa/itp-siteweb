@@ -4,8 +4,13 @@
             <div class="jumbotron">
                 <h1 class="display-4">Contact Tracer</h1>
                 <p class="lead">Tracing COVID-19</p>
-                <a href="/login" class="btn btn-success">Login</a>
-                <a href="/register" class="btn btn-outline-info">Register</a>
+                <?php if(!isset($_SESSION['user'])):?>
+                    <a href="/login" class="btn btn-success">Login</a>
+                    <a href="/register" class="btn btn-outline-info">Register</a>
+                <?php else: ?>
+                    <p>Welcome <?=$user['name']?>!</p>
+                    <a class="btn btn-info" href="/map">Check out the map!</a>
+                <?php endif ?>
             </div>
         </div>
     </div>
